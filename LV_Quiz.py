@@ -29,6 +29,7 @@ def lose():
 
 #To keep our score, we create a variable called score and set it to zero.
 score = 0
+attempts = 0
 #The next variable contains the location of the Linux Voice logo.
 logo = "./images/masthead.gif"
 #This is a list, sometimes called an array. In here I store two items.
@@ -56,6 +57,7 @@ if game_start != "No":
     #and floats into strings
     msgbox(title="Let us begin",msg="Your score is "+str(score))
 
+
     #Question 1
     while True:
         msg = "What type of number is 1.4?"
@@ -65,11 +67,16 @@ if game_start != "No":
         if q1 == "Float":
             win()
             score = score + 1
-            msgbox(title="CORRECT",image="./images/tick.gif",msg="Well done you got it right. Your score is "+str(score))
+            correct = ("Well done you got it right. Your score is "+str(score))
+            image = "./images/tick.gif"
+            msgbox(title="CORRECT",image=image,msg=correct)
             break
         else:
             lose()
-            msgbox(title="Wrong Answer",image="./images/cross.gif",msg="I'm sorry that's the wrong answer")
+            wrong = "I'm sorry that's the wrong answer"
+            image = "./images/cross.gif"
+            msgbox(title="Wrong Answer",image=image,msg=wrong)
+            attempts = attempts + 1
             break
 
     #Question 2
@@ -81,11 +88,16 @@ if game_start != "No":
         if q2 == "Not Equal To":
             win()
             score = score + 1
-            msgbox(title="CORRECT",image="./images/tick.gif",msg="Well done you got it right. Your score is "+str(score))
+            correct = ("Well done you got it right. Your score is "+str(score))
+            image = "./images/tick.gif"
+            msgbox(title="CORRECT",image=image,msg=correct)
             break
         else:
             lose()
-            msgbox(title="Wrong Answer",image="./images/cross.gif",msg="I'm sorry that's the wrong answer")
+            wrong = "I'm sorry that's the wrong answer"
+            image = "./images/cross.gif"
+            msgbox(title="Wrong Answer",image=image,msg=wrong)
+            attempts = attempts + 1
             break
             
 
@@ -98,11 +110,16 @@ if game_start != "No":
         if q3 == "x = 10":
             win()
             score = score + 1
-            msgbox(title="CORRECT",image="./images/tick.gif",msg="Well done you got it right. Your score is "+str(score))
+            correct = ("Well done you got it right. Your score is "+str(score))
+            image = "./images/tick.gif"
+            msgbox(title="CORRECT",image=image,msg=correct)
             break
         else:
             lose()
-            msgbox(title="Wrong Answer",image="./images/cross.gif",msg="I'm sorry that's the wrong answer")
+            wrong = "I'm sorry that's the wrong answer"
+            image = "./images/cross.gif"
+            msgbox(title="Wrong Answer",image=image,msg=wrong)
+            attempts = attempts + 1
             break
 
     #Question 4
@@ -114,15 +131,24 @@ if game_start != "No":
         if q3 == "Guido Van Rossum":
             win()
             score = score + 1
-            msgbox(title="CORRECT",image="./images/tick.gif",msg="Well done you got it right. Your score is "+str(score))
+            correct = ("Well done you got it right. Your score is "+str(score))
+            image = "./images/tick.gif"
+            msgbox(title="CORRECT",image=image,msg=correct)
             break
         else:
             lose()
-            msgbox(title="Wrong Answer",image="./images/cross.gif",msg="I'm sorry that's the wrong answer")
+            wrong = "I'm sorry that's the wrong answer"
+            image = "./images/cross.gif"
+            msgbox(title="Wrong Answer",image=image,msg=wrong)
+            attempts = attempts + 1
             break
-gameover = "./images/well_done.gif"
-intro()
+    gameover_good = "./images/well_done.gif"
+    gameover_bad = "./images/masthead.gif"
+    intro()
+    game_over_title = "Linux Voice Python Quiz"
+    msg_bad = ("Oh dear you scored "+str(score))
+    msg_good = ("Well done you scored "+str(score))
 if score < 1:
-    game_over = msgbox(title="Linux Voice Python Quiz",image=gameover,msg="Oh dear you scored "+str(score))
+    game_over = msgbox(title=game_over_title,image=gameover_bad,msg= msg_bad)
 else:
-    game_over = msgbox(title="Linux Voice Python Quiz",image=gameover,msg="Well done you scored "+str(score))
+    game_over = msgbox(title=game_over_title,image=gameover_good,msg= msg_good)
