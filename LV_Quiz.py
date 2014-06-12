@@ -29,7 +29,6 @@ def lose():
 
 #To keep our score, we create a variable called score and set it to zero.
 score = 0
-attempts = 0
 #The next variable contains the location of the Linux Voice logo.
 logo = "./images/masthead.gif"
 #This is a list, sometimes called an array. In here I store two items.
@@ -59,7 +58,7 @@ if game_start != "No":
 
 
     #Question 1
-    while True:
+    for i in range(0,3):
         msg = "What type of number is 1.4?"
         title = "Question 1"
         q1choices = ["Integer","Float","Very small"]
@@ -76,11 +75,9 @@ if game_start != "No":
             wrong = "I'm sorry that's the wrong answer"
             image = "./images/cross.gif"
             msgbox(title="Wrong Answer",image=image,msg=wrong)
-            attempts = attempts + 1
-            break
-
+            
     #Question 2
-    while True:
+    for i in range(0,3):
         msg = "In conditional logic what does != mean?"
         title = "Question 2"
         q2choices = ["Equal to","Not Equal To"]
@@ -97,12 +94,10 @@ if game_start != "No":
             wrong = "I'm sorry that's the wrong answer"
             image = "./images/cross.gif"
             msgbox(title="Wrong Answer",image=image,msg=wrong)
-            attempts = attempts + 1
-            break
-            
+                       
 
     #Question 3
-    while True:
+    for i in range(0,3):
         msg = "Which of these creates a variable called x with a value of 10 as an integer?"
         title = "Question 3"
         q3choices = ["x == 10","x = 10","x = str(10)"]
@@ -119,11 +114,10 @@ if game_start != "No":
             wrong = "I'm sorry that's the wrong answer"
             image = "./images/cross.gif"
             msgbox(title="Wrong Answer",image=image,msg=wrong)
-            attempts = attempts + 1
-            break
+            
 
     #Question 4
-    while True:
+    for i in range(0,3):
         msg = "Who created Python?"
         title = "Question 4"
         q3choices = ["Guido Van Rossum","Moff Tarkin","Linus Torvalds"]
@@ -140,8 +134,7 @@ if game_start != "No":
             wrong = "I'm sorry that's the wrong answer"
             image = "./images/cross.gif"
             msgbox(title="Wrong Answer",image=image,msg=wrong)
-            attempts = attempts + 1
-            break
+            
     gameover_good = "./images/well_done.gif"
     gameover_bad = "./images/masthead.gif"
     intro()
