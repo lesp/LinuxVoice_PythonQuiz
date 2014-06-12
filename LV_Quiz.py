@@ -16,15 +16,15 @@ pygame.mixer.init()
 #Now we create three functions, these functions contain the code to play each audio track.
 #The audio for each of these functions should be in the same folder as this code.
 def intro():
-    intro=pygame.mixer.music.load('intro.mp3')
+    intro=pygame.mixer.music.load('./audio/intro.mp3')
     pygame.mixer.music.play(1)
 
 def win():
-    win=pygame.mixer.music.load('correct.mp3')
+    win=pygame.mixer.music.load('./audio/correct.mp3')
     pygame.mixer.music.play(1)
 
 def lose():
-    lose=pygame.mixer.music.load('wrong.mp3')
+    lose=pygame.mixer.music.load('./audio/wrong.mp3')
     pygame.mixer.music.play(1)
 
 #To keep our score, we create a variable called score and set it to zero.
